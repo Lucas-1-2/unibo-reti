@@ -1,0 +1,73 @@
+/* Stile basilare per tutte le pagine */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0 auto;           /* mantiene contenuto centrato */
+    max-width: 800px;
+    padding: 20px;
+    background-color: #f9f9f9; /* sfondo chiaro desktop */
+    color: #333;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;            /* anziché usare |, separi i link con gap */
+    margin-bottom: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Definizione di un'animazione che fa “pulsare” il colore del testo */
+@keyframes pulsante {
+    0%   { color: #444; }
+    50%  { color: #ee0303; }
+    100% { color: #444; }
+}
+
+h1 {
+    animation: pulsante 2s infinite;
+}
+
+main {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Se la larghezza schermo è inferiore a 600px, modifichiamo sfondo e margini */
+@media only screen and (max-width: 600px) {
+  body {
+      padding: 10px;                  /* riduce il padding generale */
+      background-color: #a3a3a3;    /* sfondo leggermente più scuro su mobile */
+      margin: 0 10px;                 /* piccoli margini laterali */
+  }
+
+  nav {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 15px;            /* margine leggermente ridotto */
+  }
+
+  nav a {
+      margin: 5px 0;                  /* margine verticale più evidente nei link */
+  }
+
+  main {
+      font-size: 18px;                /* (invariato) */
+      margin-bottom: 15px;            /* aggiunto un margine inferiore su mobile */
+  }
+}
